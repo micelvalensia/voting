@@ -1,0 +1,19 @@
+components/
+├── ui/                    # Reusable UI components
+│   ├── Button/
+│   │   ├── index.tsx
+│   │   ├── Button.test.tsx
+│   │   └── Button.module.css
+│   ├── Card/
+│   └── Input/
+├── layout/                # Layout components
+│   ├── Header/
+│   ├── Footer/
+│   └── Sidebar/
+└── features/              # Feature-specific components
+    ├── auth/              # Authentication-related components
+    │   ├── LoginForm/
+    │   └── SignupForm/
+    └── blog/              # Blog-related components
+        ├── PostCard/
+        └── CommentSection/
