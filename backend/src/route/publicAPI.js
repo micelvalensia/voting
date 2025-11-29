@@ -4,7 +4,7 @@ import { authenticateToken } from "../middleware/authmiddleware.js";
 
 const publicRouter = new express.Router();
 
-publicRouter.post("/register", authenticateToken, userController.register);
+publicRouter.post("/register", userController.register);
 publicRouter.post("/login", userController.login);
 publicRouter.post("/logout", (req, res) => {
   res.cookie("token", "", {

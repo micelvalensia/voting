@@ -55,7 +55,10 @@ const login = async (request) => {
     throw new AppError("Username tidak ditemukan", 401);
   }
 
-  const isPasswordValid = bcrypt.compare(loginRequest.password, user.password);
+  const isPasswordValid = await bcrypt.compare(
+    loginRequest.password,
+    user.password
+  );
 
   if (!isPasswordValid) {
     throw new AppError("Password salah", 401);
@@ -63,7 +66,7 @@ const login = async (request) => {
 
   const token = generateTokenJWT(user);
 
-  return token;
+  return { token };
 };
 
 export default {

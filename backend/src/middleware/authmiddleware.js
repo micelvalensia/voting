@@ -31,7 +31,7 @@ export const authenticateToken = async (req, res, next) => {
     }
 
     // Verifikasi token
-    const decoded = jwt.verify(token, JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.SECRET_JWT);
     console.log("here decocde", decoded);
 
     // Cari user berdasarkan ID dari token
